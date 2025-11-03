@@ -21,7 +21,6 @@ class AuthController extends BaseController
             return $this->response->setJSON(['error' => 'Credenciais inválidas'])->setStatusCode(401);
         }
 
-        // Token simples: aqui você pode gerar JWT. Por enquanto, retornamos id e tipo (não seguro)
         $token = base64_encode($user['id'] . ':' . $user['email']); // apenas placeholder
         return $this->response->setJSON([
             'token' => $token,
